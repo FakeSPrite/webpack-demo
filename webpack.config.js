@@ -10,7 +10,7 @@ module.exports={
     output:{
 
         path:path.resolve(__dirname, 'dist'),
-        filename:'js/[name].bundle.js',
+        filename:'js/[name].bundle.js'
         // publicPath:'http://cdn.com/'
     },
 
@@ -19,21 +19,24 @@ module.exports={
             {
                 test: /\.js$/,
                 loader: 'babel-loader',
+                exclude:__dirname+'/node_modules/',
+                include:__dirname+'/src/',
                 options: {
-                    'presets': ['env']
+                    'presets': ['es2017']
                 }
             }
         ]
     },
 
-    plugins:[
-       new htmlWebpackPlugin({
-           filename:'index.html',
-           template:'index.html',
-           inject:'body'
-       })
-    ]
+    plugins: [
+        new htmlWebpackPlugin({
+            filename:'index.html',
+            template:'index.html',
+            inject:'body'
+        })
 
+
+    ]
 }
 
 // module.exports=config;

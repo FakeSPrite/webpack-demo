@@ -73,8 +73,8 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 
 
 const App = function () {
-    const NUM = 1;
-    alert(NUM);
+    // const NUM = 1;
+    // alert(NUM);
     console.log(__WEBPACK_IMPORTED_MODULE_0__components_layer_layer_js__["a" /* default */]);
 }
 
@@ -85,26 +85,18 @@ new App();
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__layer_html__ = __webpack_require__(2);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__layer_html___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0__layer_html__);
 /**
  * Created by Owner on 1/11/2017.
  */
-
+// import tpl from './layer.html';
 function layer() {
     return {
         name:'layer',
-        tpl:__WEBPACK_IMPORTED_MODULE_0__layer_html__["default"]
+        tpl:tpl
     }
 }
 
 /* harmony default export */ __webpack_exports__["a"] = (layer);
-
-/***/ }),
-/* 2 */
-/***/ (function(module, exports) {
-
-throw new Error("Module parse failed: Unexpected token (1:0)\nYou may need an appropriate loader to handle this file type.\n| <div class=\"layer\">\r\n|     <div>this is a layer</div>\r\n| </div>");
 
 /***/ })
 /******/ ]);

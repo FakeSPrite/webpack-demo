@@ -5,29 +5,33 @@ const path = require('path');
 
 module.exports={
 
-    entry:{
-        main:'./src/script/main.js',
-        a:'./src/script/a.js'
-    },
+    entry: './src/app.js',
 
     output:{
 
         path:path.resolve(__dirname, 'dist'),
-        filename:'js/[name]-[chunkhash].js',
+        filename:'js/[name].bundle.js',
         // publicPath:'http://cdn.com/'
     },
 
+    module: {
+        loaders: [
+            {
+                test: /\.js$/,
+                loader: 'babel-loader',
+                options: {
+                    'presets': ['env']
+                }
+            }
+        ]
+    },
 
     plugins:[
-        new htmlWebpackPlugin(
-            {
-                filename:'index.html',
-                template:'index.html',
-                inject:'head',
-                title:'webpack is good',
-                date:new Date()
-            }
-        )
+       new htmlWebpackPlugin({
+           filename:'index.html',
+           template:'index.html',
+           inject:'body'
+       })
     ]
 
 }
